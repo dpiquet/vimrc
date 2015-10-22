@@ -40,6 +40,9 @@ call vundle#begin()
     " Additionnal color schemes
     Plugin 'flazz/vim-colorschemes'
 
+    " Twig syntax
+    Plugin 'beyondwords/vim-twig'
+
 call vundle#end()
 
 syntax on
@@ -63,7 +66,7 @@ set ignorecase		" Do case insensitive matching
 "set incsearch		" Incremental search
 "set autowrite		" Automatically save before commands like :next and :make
 "set hidden		" Hide buffers when they are abandoned
-set mouse=a		" Enable mouse usage (all modes)
+"set mouse=a		" Enable mouse usage (all modes)
 
 filetype plugin indent on
 
@@ -74,3 +77,8 @@ set smarttab
 set number
 set title
 set wildmenu
+
+" Show nbsp character
+set listchars=nbsp:•,extends:#,trail:.,tab:>-
+set list
+
