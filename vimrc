@@ -47,7 +47,8 @@ call vundle#end()
 
 syntax on
 set background=dark
-colorscheme Chasing_Logic
+" colorscheme Chasing_Logic
+colorscheme badwolf
 
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
