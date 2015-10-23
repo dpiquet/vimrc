@@ -72,7 +72,7 @@ filetype plugin indent on
 
 set tabstop=4
 set shiftwidth=4
-set expandtab
+" set expandtab
 set smarttab
 set number
 set title
@@ -82,3 +82,5 @@ set wildmenu
 set listchars=nbsp:•,extends:#,trail:.,tab:>-
 set list
 
+
+au FileType yml et
