@@ -43,12 +43,26 @@ call vundle#begin()
     " Twig syntax
     Plugin 'beyondwords/vim-twig'
 
+	" Show diffs in vim
+	Plugin 'svndiff'
+
 call vundle#end()
 
 syntax on
 set background=dark
 " colorscheme Chasing_Logic
+
+let g:badwolf_darkgutter=1
 colorscheme badwolf
+
+" Configure svndiff
+noremap <F3> :call Svndiff("prev")<CR>
+noremap <F4> :call Svndiff("next")<CR>
+noremap <F5> :call Svndiff("clear")<CR>
+
+hi DiffAdd      ctermfg=0 ctermbg=2 guibg='green'
+hi DiffDelete   ctermfg=0 ctermbg=1 guibg='red'
+hi DiffChange   ctermfg=0 ctermbg=3 guibg='yellow'
 
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -79,9 +93,15 @@ set number
 set title
 set wildmenu
 
-" Show nbsp character
+" Show nbsp character, tabs
 set listchars=nbsp:•,extends:#,trail:.,tab:>-
 set list
 
 
 au FileType yml et
+
+" .module files are often drupal modules written in PHP
+au BufRead,BufNewFile *.module set filetype=php
+au BufRead,BufNewFile *.install set filetype=php
+
+autocmd BufEnter * :syntax sync fromstart
