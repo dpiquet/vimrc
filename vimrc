@@ -46,6 +46,9 @@ call vundle#begin()
 	" Show diffs in vim
 	Plugin 'svndiff'
 
+	" Rainbow parenthis for unicorns
+	Plugin 'kien/rainbow_parentheses.vim'
+
 call vundle#end()
 
 syntax on
@@ -97,11 +100,20 @@ set wildmenu
 set listchars=nbsp:•,extends:#,trail:.,tab:>-
 set list
 
+" always show status bar
+set laststatus=2
 
 au FileType yml et
 
 " .module files are often drupal modules written in PHP
 au BufRead,BufNewFile *.module set filetype=php
 au BufRead,BufNewFile *.install set filetype=php
+au BufRead,BufNewFile *.theme set filetype=php
+
+" Rainbow parenthesis
+" au VimEnter * RainbowParenthesesToggle
+" au Syntax * RainbowParenthesesLoadRound
+" au Syntax * RainbowParenthesesLoadSquare
+" au Syntax * RainbowParenthesesLoadBraces
 
 autocmd BufEnter * :syntax sync fromstart
