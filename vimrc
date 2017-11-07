@@ -17,10 +17,8 @@ filetype off                  " required
 
 let g:solarized_termcolors=16
 
-set runtimepath=~/.vim,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim74,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after,/etc/vim-plugins
-
 " set the runtime path to include Vundle and initialize
-set rtp+=/etc/vim-plugins/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
     " let Vundle manage Vundle, required
     Plugin 'VundleVim/Vundle.vim'
@@ -36,18 +34,18 @@ call vundle#begin()
 
     " Up to date PHP
     Plugin 'StanAngeloff/php.vim'
-    
+
     " Additionnal color schemes
     Plugin 'flazz/vim-colorschemes'
 
     " Twig syntax
     Plugin 'beyondwords/vim-twig'
 
-	" Show diffs in vim
-	Plugin 'svndiff'
+    " Show diffs in vim
+    Plugin 'svndiff'
 
-	" Rainbow parenthis for unicorns
-	Plugin 'kien/rainbow_parentheses.vim'
+    " Rainbow parenthis for unicorns
+    Plugin 'kien/rainbow_parentheses.vim'
 
 call vundle#end()
 
@@ -90,7 +88,7 @@ filetype plugin indent on
 
 set tabstop=4
 set shiftwidth=4
-" set expandtab
+set expandtab
 set smarttab
 set number
 set title
@@ -117,3 +115,7 @@ au BufRead,BufNewFile *.theme set filetype=php
 " au Syntax * RainbowParenthesesLoadBraces
 
 autocmd BufEnter * :syntax sync fromstart
+
+" Correction background color au scroll
+highlight Normal ctermbg=NONE
+highlight nonText ctermbg=NONE
